@@ -1,0 +1,10 @@
+.draw-field {
+    margin: 20px;
+}
+
+
+.draw-button-plus {
+    font-weight: 900;
+    border-radius: 7px;
+    padding: 0 1.5px;
+}

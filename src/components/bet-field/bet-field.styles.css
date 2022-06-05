@@ -1,0 +1,53 @@
+.bet-field {
+	margin:0 2rem;
+	padding: 10px;
+	display: flex;
+    color: rgb(4, 61, 24);
+    font-weight: 700;
+}
+
+label {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	text-align: right;
+	width: 200px;
+	line-height: 26px;
+	margin-bottom: 10px;
+}
+
+input {
+	height: 30px;
+    width: 60px;
+	margin-left: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 700;
+    border: 2px green solid;
+}
+
+span {
+    padding: 0 10px;
+}
+
+.bet-buttons {
+    font-weight: 900;
+    border-radius: 7px;
+    padding: 0 1.5px;
+}
+
+
+.reset {
+	background-color: rgb(163, 16, 16);
+	border-radius: 15px;
+	font-weight: bold;
+	padding: 7px;
+	color: azure;
+	border: none;
+}
+
+.reset:hover {
+	background-color: black;
+	color: crimson;
+}

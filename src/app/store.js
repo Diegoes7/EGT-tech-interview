@@ -1,8 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { configureStore } from "@reduxjs/toolkit";
+import buttonReducer from "../features/button/buttonSlice";
+import betSlice from "../features/betting/bettingSlice";
+import drawSlice from "../features/draw/drawSlice";
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+	reducer: {
+		button: buttonReducer,
+		bet: betSlice,
+		draw: drawSlice
+	},
 });

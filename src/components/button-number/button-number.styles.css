@@ -1,0 +1,10 @@
+.button {
+	height: 18%;
+	width: 10%;
+	background-color: grey;
+}
+
+.button:hover {
+    background-color: aliceblue;
+}
+
