@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import ButtonNumber from "../button-number/button-number.component";
 import "./game-board.styles.css";
