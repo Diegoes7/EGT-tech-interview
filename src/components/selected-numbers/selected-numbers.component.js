@@ -27,7 +27,7 @@ const SelectedNumbers = () => {
             <div className="selectedNumber-container">
 			{currentSelectedNumbers.map((sln) => {
 				return <span className="selectedNumber" key={sln.id}>{sln.value}</span>;
-			})}
+			}).reverse()}
             </div>
             <button className="confirm">Confirm</button>
 		</div>

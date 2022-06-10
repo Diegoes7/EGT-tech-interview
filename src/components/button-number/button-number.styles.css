@@ -1,10 +1,18 @@
 .button {
 	height: 18%;
 	width: 10%;
-	background-color: grey;
+	background-color: rgb(29, 8, 74);
+	font-weight: 700;
+	font-size: 20px;
+	color: rgb(26, 198, 161);
 }
 
 .button:hover {
-    background-color: aliceblue;
+    background-color: rgb(250, 250, 250);
+}
+
+.button:disabled {
+	background-color: rgb(175, 207, 11);
+	color:rgb(175, 207, 11);
 }
 

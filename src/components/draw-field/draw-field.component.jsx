@@ -6,7 +6,7 @@ import {
 	decrement,
 } from "../../features/draw/drawSlice";
 
-import './draw-field.styles.css'
+import "./draw-field.styles.css";
 
 const DrawField = () => {
 	// get slice of the state and use in UI component
@@ -34,10 +34,8 @@ const DrawField = () => {
 	// input is type text because of the arrays is annoying
 	return (
 		<div className="draw-field">
+			<span className="draw-title">Теглене: {currentDraw}</span>
 			<label>
-				{" "}
-				Теглене:
-				<span>{currentDraw}</span>
 				<div className="draw-buttons">
 					<button
 						className="draw-button-plus"

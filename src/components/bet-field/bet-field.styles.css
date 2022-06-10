@@ -1,18 +1,27 @@
 .bet-field {
-	margin:0 2rem;
-	padding: 10px;
+	margin: 2px 2rem;
+	padding: 10px 25px;
 	display: flex;
+	flex-direction: column;
     color: rgb(4, 61, 24);
     font-weight: 700;
+	justify-content: center;
+	align-items: center;
+	background-color: #fff;
+	border-radius: 20px;
+}
+
+.final-bet {
+	margin-bottom: 3px;
 }
 
 label {
 	display: flex;
 	flex-direction: row;
-	justify-content: flex-end;
+	justify-content:center;
 	align-items: center;
 	text-align: right;
-	width: 200px;
+	width: 100px;
 	line-height: 26px;
 	margin-bottom: 10px;
 }

@@ -1,12 +1,12 @@
 .app {
 	margin: 10px 20px 10px 20px;
 	display: flex;
-	justify-content: center;
+	/* justify-content: center; */
 	height: 100vh;
 }
 
 .group-fields {
-	margin: 30px 50px;
+	margin:20px 5px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;

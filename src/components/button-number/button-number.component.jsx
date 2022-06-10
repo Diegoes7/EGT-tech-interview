@@ -4,7 +4,7 @@ import { toggleBtn } from "../../features/button/buttonSlice";
 import "./button-number.styles.css";
 
 // pass props form game board component to populate values
-const ButtonNumber = ({ id, value, selected }) => {
+const ButtonNumber = ({ id, value, selected, disabled }) => {
 	// trigger action to the redux store
 	const dispatch = useDispatch();
 	// console.log(currentBoard);
@@ -17,10 +17,17 @@ const ButtonNumber = ({ id, value, selected }) => {
 		// console.log(id);
 		// console.log(currentEl);
 		dispatch(toggleBtn(id));
+		// disabled(disabledBtns())
 	};
-    
+	console.log();
+
 	return (
-		<button className="button" id={id} onClick={handleButton}>
+		<button
+			className="button"
+			id={id}
+			disabled={disabled}
+			onClick={handleButton}
+		>
 			{selected ? value : "X"}
 		</button>
 	);
