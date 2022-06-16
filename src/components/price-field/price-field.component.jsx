@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 
-import "./price-field.styles.css";
+import {PriceValue, PriceContainer} from "./price-field.styles";
 
 const Price = () => {
    //get state properties and pass it the UI element
@@ -13,9 +13,9 @@ const Price = () => {
  
 	// pass the value to be displayed, and format it 
 	return (
-		<div className="price-container">
-			Цена: <span className='price'> {finalPrice.toFixed(2)} лв.</span>
-		</div>
+		<PriceContainer>
+			Цена: <PriceValue> {finalPrice.toFixed(2)} лв.</PriceValue>
+		</PriceContainer>
 	);
 };
 

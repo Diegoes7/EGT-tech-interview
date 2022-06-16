@@ -1,8 +1,0 @@
-    .gameBoard {
-        margin-top: 2rem;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        width: 800px;
-        height: 400px;
-    }

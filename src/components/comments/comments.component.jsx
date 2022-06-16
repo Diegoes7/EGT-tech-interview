@@ -1,9 +1,14 @@
-import { useSelector } from "react-redux";
 import { useGetCommentsQuery } from "../../features/apiSlice/commentsSlice";
+import { useSelector } from "react-redux";
+import Comment from "./comment.component";
 
-import "./comments.styles.css";
+import { CommentsContainer, Title } from "./comments.styles.js";
 
 const Comments = () => {
+	const selectedNumberArray = useSelector(
+		(state) => state.button.selectedNumbers
+	);
+
 	const {
 		data: comments,
 		isLoading,
@@ -12,42 +17,33 @@ const Comments = () => {
 		error,
 	} = useGetCommentsQuery();
 
-	const selectedNumberArray = useSelector(
-		(state) => state.button.selectedNumbers
-	);
-
 	let content;
 
 	if (isLoading) {
 		content = "Loading...";
 	} else if (isSuccess) {
 		content = comments
-			.filter((el) => el.id <= 10)
-			.reverse()
-			.map((comments) => (
-				<p key={comments.id}>
-					{comments.id}: {comments.name}{}
-				</p>
+			.map((el) => {
+				if (el.id === selectedNumberArray.length) {
+					return { ...el, marked: true };
+				}
+				return { ...el, marked: false };
+			})
+			.map(({ id, marked, name }) => (
+				<Comment key={id} id={id} marked={marked} name={name} />
 			));
 	} else if (isError) {
 		content = <div>{error.toString()}</div>;
 	}
-	
-	// get length of selected number [], => get on certain commnet add some style
-	if (selectedNumberArray.length > 0) {
-		console.log(selectedNumberArray.length);
-		const markedComment = content
-			.map((el) => el.key)
-			.find((el) => el === selectedNumberArray.length);
-		console.log(markedComment);
-		// console.log(content[markedComment1].key);
-	}
+
+	// console.log(comments);
+	// console.log(content);
 
 	return (
-		<div className="comments">
-			<h2 className="title">Comments: </h2>
-			{content} 
-		</div>
+		<CommentsContainer>
+			<Title>Comments: </Title>
+			{content}
+		</CommentsContainer>
 	);
 };
 

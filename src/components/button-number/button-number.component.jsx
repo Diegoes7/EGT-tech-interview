@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { toggleBtn } from "../../features/button/buttonSlice";
 
-import "./button-number.styles.css";
+import {TheButton} from "./button-number.styles";
 
 // pass props form game board component to populate values
 const ButtonNumber = ({ id, value, selected, disabled }) => {
@@ -22,14 +22,14 @@ const ButtonNumber = ({ id, value, selected, disabled }) => {
 	console.log();
 
 	return (
-		<button
+		<TheButton
 			className="button"
 			id={id}
 			disabled={disabled}
 			onClick={handleButton}
 		>
 			{selected ? value : "X"}
-		</button>
+		</TheButton>
 	);
 };
 

@@ -7,7 +7,7 @@ import {
 } from "../../features/clock/clockSlice";
 import { useGetCommentsQuery } from "../../features/apiSlice/commentsSlice";
 
-import "./timer.styles.css";
+import {TimerContainer} from "./timer.styles";
 
 const Timer = () => {
 	const dispatch = useDispatch();
@@ -20,6 +20,7 @@ const Timer = () => {
 	if (currentTimer <= 0 && isSuccess) {
 		dispatch(loadComments());
 		dispatch(reset());
+		console.log('loading');
 	}
 
 	useEffect(() => {
@@ -28,12 +29,12 @@ const Timer = () => {
 	}, [dispatch]);
 
 	return (
-		<div className="timer">
+		<TimerContainer>
 			Timer:{" "}
 			<span>
 				{min}:{sec}
 			</span>
-		</div>
+		</TimerContainer>
 	);
 };
 

@@ -6,7 +6,9 @@ import {
 	decrement,
 } from "../../features/draw/drawSlice";
 
-import "./draw-field.styles.css";
+import {DrawButtonsModifier, DrawTitle, DrawFieldContainer} from "./draw-field.styles";
+import {InputContainer, InputField} from '../bet-field/bet-field.styles'
+
 
 const DrawField = () => {
 	// get slice of the state and use in UI component
@@ -33,29 +35,25 @@ const DrawField = () => {
 
 	// input is type text because of the arrays is annoying
 	return (
-		<div className="draw-field">
-			<span className="draw-title">Теглене: {currentDraw}</span>
-			<label>
-				<div className="draw-buttons">
-					<button
-						className="draw-button-plus"
+		<DrawFieldContainer>
+			<DrawTitle>Теглене: {currentDraw}</DrawTitle>
+			<InputContainer>
+					<DrawButtonsModifier
 						onClick={() => dispatch(increment())}
 					>
 						{" "}
 						&#x2B;
-					</button>
-					<button
-						className="draw-button-plus"
+					</DrawButtonsModifier>
+					<DrawButtonsModifier
 						onClick={() => dispatch(decrement())}
 					>
 						{" "}
 						&minus;
-					</button>
-				</div>
-				<input type="text" value={draw} onChange={onChangeHandler} />
-				<span> лв.</span>
-			</label>
-		</div>
+					</DrawButtonsModifier>
+				
+				<InputField type="text" value={draw} onChange={onChangeHandler} />
+			</InputContainer>
+		</DrawFieldContainer>
 	);
 };
 

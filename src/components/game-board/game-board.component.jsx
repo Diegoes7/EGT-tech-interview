@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { disabledBtns, enableBtns } from "../../features/button/buttonSlice";
 
 import ButtonNumber from "../button-number/button-number.component";
-import "./game-board.styles.css";
+import {GameBoardContainer} from "./game-board.styles";
 
 const GameBoard = () => {
 	// connect state to component and vilualize state
@@ -21,7 +21,7 @@ const GameBoard = () => {
 		//* pass throught the array and fill the Button elemnent
 		//* with props/ values
 		// <h2>Lucky Number Slevin</h2>
-		<div className="gameBoard">
+		<GameBoardContainer>
 			{board.map((cur, inx) => {
 				return (
 					<ButtonNumber
@@ -33,7 +33,7 @@ const GameBoard = () => {
 					/>
 				);
 			})}
-		</div>
+		</GameBoardContainer>
 	);
 };
 

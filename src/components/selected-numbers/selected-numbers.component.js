@@ -1,10 +1,15 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addNumber } from "../../features/button/buttonSlice";
-import "./selected-numbers.styles.css";
+import {
+	SelectedButtons,
+	SelectedNumbersContainer,
+	SelectedNumbersRow,
+	ConfirmSelectedNumbers,
+} from "./selected-numbers.styles.js";
 
 const SelectedNumbers = () => {
-	// get slices of the state 
+	// get slices of the state
 	const currentSelectedNumbers = useSelector(
 		(state) => state.button.selectedNumbers
 	);
@@ -21,16 +26,20 @@ const SelectedNumbers = () => {
 	// iterate througth [] nand show the selected numbers
 	//* just to send or keep numbers somewhere, not part of assignment
 	return (
-		<div className="selected-buttons">
-			My Lucky Numbers: 
+		<SelectedButtons>
+			My Lucky Numbers:
 			<br />
-            <div className="selectedNumber-container">
-			{currentSelectedNumbers.map((sln) => {
-				return <span className="selectedNumber" key={sln.id}>{sln.value}</span>;
-			}).reverse()}
-            </div>
-            <button className="confirm">Confirm</button>
-		</div>
+			<SelectedNumbersContainer>
+				{currentSelectedNumbers
+					.map((sln) => {
+						return (
+							<SelectedNumbersRow key={sln.id}>{sln.value}</SelectedNumbersRow>
+						);
+					})
+					.reverse()}
+			</SelectedNumbersContainer>
+			<ConfirmSelectedNumbers>Confirm</ConfirmSelectedNumbers>
+		</SelectedButtons>
 	);
 };
 

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // assign board to inial state property
 const initialState = {
-	clockTime: 20,
+	clockTime: 180,
 	loadStuff: true,
 };
 
@@ -15,7 +15,7 @@ export const clockSlice = createSlice({
 			state.clockTime -= 1;
 		},
 		reset: (state) => {
-			state.clockTime = 20;
+			state.clockTime = 0;
 		},
 		loadComments: (state) => {
 			state.loadStuff = true;
@@ -27,6 +27,7 @@ export const clockSlice = createSlice({
 });
 
 // action creators
-export const { clockTick, reset, loadComments, hideComments } = clockSlice.actions;
+export const { clockTick, reset, loadComments, hideComments } =
+	clockSlice.actions;
 
 export default clockSlice.reducer;

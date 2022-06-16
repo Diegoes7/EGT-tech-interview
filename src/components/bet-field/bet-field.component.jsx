@@ -6,22 +6,38 @@ import {
 	decrement,
 	reset,
 } from "../../features/betting/bettingSlice";
-import "./bet-field.styles.css";
+import {
+	BetFieldContainer,
+	InputContainer,
+	InputField,
+	ActionButtons,
+	BetModifyingButtons,
+	FinalBet,
+} from "./bet-field.styles.js";
 
 const BetField = () => {
 	// set local state to show in the input to be empty, personal decision
-	const [input, setInput] = useState("");
+	const [input, setInput] = useState("1.00");
 	const dispatch = useDispatch();
 	const currentBet = useSelector((state) => state.bet.bet);
-	// console.log(currentBet);
+	console.log(currentBet.toFixed(2));
 
 	// get the event Object, and his value and pass it to the local state
 	//* tthen fire action and pass value to the redux store, to update the state
 	//* and sync with UI
 	const onChangeHandler = (event) => {
-		const { value } = event.target;
-		dispatch(incrementByAmount(Number(value)));
+		let { value } = event.target;
+		value =
+			value.indexOf(".") >= 0
+				? value.substr(0, value.indexOf(".")) +
+				  value.substr(value.indexOf("."), 3)
+				: value;
 		setInput(value);
+		// dispatch(incrementByAmount(value));
+	};
+
+	const onSubmitHandler = () => {
+		dispatch(incrementByAmount(input));
 	};
 
 	// reset bet and input, start over
@@ -34,19 +50,19 @@ const BetField = () => {
 	//* also to show that I heard of them
 	//use unicode cause is faster to implement
 	return (
-		<div className="bet-field">
+		<BetFieldContainer>
 			{" "}
-			<span className="final-bet">Залог: {currentBet.toFixed(2)}</span>
-			<label>
+			<FinalBet>Залог: {currentBet.toFixed(2)}</FinalBet>
+			<InputContainer>
 				<div>
-					<button className="bet-buttons" onClick={() => dispatch(increment())}>
+					<BetModifyingButtons onClick={() => dispatch(increment())}>
 						&#x2B;
-					</button>
-					<button className="bet-buttons" onClick={() => dispatch(decrement())}>
+					</BetModifyingButtons>
+					<BetModifyingButtons onClick={() => dispatch(decrement())}>
 						&minus;
-					</button>
+					</BetModifyingButtons>
 				</div>
-				<input
+				<InputField
 					autoFocus
 					type="text"
 					name="betInput"
@@ -54,11 +70,10 @@ const BetField = () => {
 					onChange={onChangeHandler}
 				/>
 				<span> лв.</span>
-			</label>
-			<button className="reset" onClick={resetBetToInitial}>
-				Reset
-			</button>
-		</div>
+			</InputContainer>
+			<ActionButtons onClick={onSubmitHandler}>Заложи</ActionButtons>
+			<ActionButtons onClick={resetBetToInitial}>Изтрий</ActionButtons>
+		</BetFieldContainer>
 	);
 };
 
