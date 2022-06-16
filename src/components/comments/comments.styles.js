@@ -10,7 +10,16 @@ export const CommentsContainer = styled.div`
 	border-radius: 20px;
 	width: 70%;
 	height: 31rem;
+	width: 18rem;
 
+	@media screen and (max-width: 1260px) {
+		width: 28rem;
+	}
+
+	@media screen and (max-width: 610px) {
+		width: 18rem;
+	}
+	
 	@media screen and (max-width: 450px) {
 		height: 37rem;
 	}
