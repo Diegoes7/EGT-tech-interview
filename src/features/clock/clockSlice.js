@@ -15,7 +15,7 @@ export const clockSlice = createSlice({
 			state.clockTime -= 1;
 		},
 		reset: (state) => {
-			state.clockTime = 100;
+			state.clockTime = 180;
 		},
 		loadComments: (state) => {
 			state.loadStuff = true;
