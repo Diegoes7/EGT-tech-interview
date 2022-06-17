@@ -31,6 +31,10 @@ export const InputContainer = styled.label`
 	width: 100px;
 	line-height: 26px;
 	margin-bottom: 10px;
+
+	span {
+		padding-left: 0.5rem;
+	}
 `;
 
 export const InputField = styled.input`
