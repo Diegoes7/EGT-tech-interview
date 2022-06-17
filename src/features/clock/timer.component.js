@@ -4,8 +4,8 @@ import {
 	clockTick,
 	reset,
 	loadComments
-} from "../../features/clock/clockSlice";
-import { useGetCommentsQuery } from "../../features/apiSlice/commentsSlice";
+} from "./clockSlice";
+import { useGetCommentsQuery } from "../apiSlice/commentsSlice";
 
 import {TimerContainer} from "./timer.styles";
 

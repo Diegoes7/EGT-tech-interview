@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addNumber } from "../../features/button/buttonSlice";
+import { addNumber } from "../button/buttonSlice";
 import {
 	SelectedButtons,
 	SelectedNumbersContainer,
@@ -23,7 +23,7 @@ const SelectedNumbers = () => {
 	}, [selectedNumbers, dispatch]);
 	// console.log(currentSelectedNumbers);
 
-	// iterate througth [] nand show the selected numbers
+	// iterate througth [] and show the selected numbers
 	//* just to send or keep numbers somewhere, not part of assignment
 	return (
 		<SelectedButtons>

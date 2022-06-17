@@ -8,14 +8,18 @@ export const DrawFieldContainer = styled.div`
 	border-radius: 15px;
 `;
 export const DrawTitle = styled.span`
-	margin-bottom: 7px;
+	margin: 7px;
+	padding: 1.5rem;
+	@media screen and (max-width: 905px) {
+		padding: 0;
+	}
 `;
 
 export const DrawButtonsModifier = styled.button`
 	font-weight: 900;
 	border-radius: 7px;
 	padding: 0 1.5px;
-    margin-left: 10px;
+	margin-left: 10px;
 
 	&:hover {
 		background-color: rgb(16, 163, 160);

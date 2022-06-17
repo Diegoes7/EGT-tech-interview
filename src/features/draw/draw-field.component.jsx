@@ -4,10 +4,10 @@ import {
 	incrementByAmount,
 	increment,
 	decrement,
-} from "../../features/draw/drawSlice";
+} from "./drawSlice";
 
 import {DrawButtonsModifier, DrawTitle, DrawFieldContainer} from "./draw-field.styles";
-import {InputContainer, InputField} from '../bet-field/bet-field.styles'
+import {InputContainer, InputField} from '../betting/bet-field.styles.js'
 
 
 const DrawField = () => {

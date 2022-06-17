@@ -8,7 +8,7 @@ export const BetFieldContainer = styled.div`
 	color: rgb(4, 61, 24);
 	font-weight: 700;
 	justify-content: center;
-	align-items: center;
+	align-content: center;
 	background-color: #fff;
 	border-radius: 20px;
 `;
@@ -16,6 +16,10 @@ export const BetFieldContainer = styled.div`
 export const FinalBet = styled.span`
 	margin-bottom: 3px;
 	padding: 0 10px;
+
+	@media screen and (max-width: 905px) {
+		padding: 0;
+	}
 `;
 
 export const InputContainer = styled.label`

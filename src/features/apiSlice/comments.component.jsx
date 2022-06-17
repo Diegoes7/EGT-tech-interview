@@ -1,8 +1,8 @@
-import { useGetCommentsQuery } from "../../features/apiSlice/commentsSlice";
+import { useGetCommentsQuery } from "./commentsSlice";
 import { useSelector } from "react-redux";
 import Comment from "./comment.component";
 
-import { CommentsContainer, Title } from "./comments.styles.js";
+import { CommentsContainer, Title } from "./comments.styles";
 
 const Comments = () => {
 	const selectedNumberArray = useSelector(
@@ -22,6 +22,8 @@ const Comments = () => {
 	if (isLoading) {
 		content = "Loading...";
 	} else if (isSuccess) {
+	// iterate througth the recieved data, check for true/false, so comment is marked or not
+	//* return objects, and modify only currnetly selected comment
 		content = comments
 			.map((el) => {
 				if (el.id === selectedNumberArray.length) {

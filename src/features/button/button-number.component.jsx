@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { toggleBtn } from "../../features/button/buttonSlice";
+import { toggleBtn } from "./buttonSlice";
 
 import {TheButton} from "./button-number.styles";
 

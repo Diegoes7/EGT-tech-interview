@@ -5,7 +5,7 @@ import {
 	increment,
 	decrement,
 	reset,
-} from "../../features/betting/bettingSlice";
+} from "./bettingSlice";
 import {
 	BetFieldContainer,
 	InputContainer,
@@ -13,14 +13,13 @@ import {
 	ActionButtons,
 	BetModifyingButtons,
 	FinalBet,
-} from "./bet-field.styles.js";
+} from "./bet-field.styles";
 
 const BetField = () => {
 	// set local state to show in the input to be empty, personal decision
 	const [input, setInput] = useState("1.00");
 	const dispatch = useDispatch();
 	const currentBet = useSelector((state) => state.bet.bet);
-	console.log(currentBet.toFixed(2));
 
 	// get the event Object, and his value and pass it to the local state
 	//* tthen fire action and pass value to the redux store, to update the state

@@ -10,6 +10,10 @@ export const SelectedButtons = styled.div`
 	font-weight: 600;
 	background-color: rgb(151, 229, 214);
 	border-radius: 10px;
+
+	@media screen and (max-width: 870px) {
+		padding: 10px ;
+	}
 `;
 
 export const SelectedNumbersContainer = styled.div`
@@ -20,8 +24,8 @@ export const SelectedNumbersContainer = styled.div`
 export const SelectedNumbersRow = styled.span`
 	display: flex;
 	align-items: center;
-	justify-content:space-between;
-	margin: 1px;
+	justify-content: space-between;
+	margin: 2px;
 	color: white;
 	background-color: black;
 	padding: 0.3rem 0.3rem;

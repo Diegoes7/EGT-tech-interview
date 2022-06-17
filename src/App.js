@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux";
 
-import BetField from "./components/bet-field/bet-field.component";
-import Comments from "./components/comments/comments.component";
-import DrawField from "./components/draw-field/draw-field.component";
-import GameBoard from "./components/game-board/game-board.component";
-import Price from "./components/price-field/price-field.component";
-import SelectedNumbers from "./components/selected-numbers/selected-numbers.component";
-import Timer from "./components/timer/timer.component";
+import BetField from "./features/betting/bet-field.component";
+import Comments from "./features/apiSlice/comments.component";
+import DrawField from "./features/draw/draw-field.component";
+import GameBoard from "./features/game-board/game-board.component";
+import Price from "./features/price-field/price-field.component";
+import SelectedNumbers from "./features/selected-numbers/selected-numbers.component";
+import Timer from "./features/clock/timer.component";
 
 import {
 	AppContainer,
