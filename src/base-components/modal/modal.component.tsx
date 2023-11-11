@@ -26,7 +26,8 @@ const WinOrLoose: React.FC<Props> = ({ isOpen, handleClose }) => {
 		first: '',
 		second: '',
 	}
-	if (calculatedResult === 0) {
+
+	if (typeof calculatedResult === 'number' && calculatedResult === 0) {
 		message.first = 'Игра добре, но загуби. Опитай пак.'
 		message.second = 'Няма награда за теб този път.'
 	} else {
