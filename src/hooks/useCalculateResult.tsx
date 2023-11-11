@@ -4,7 +4,7 @@ import { Button } from '../features/button/buttonSlice'
 //! custom hook to calculate the sum and decide if you win
 //! for now only odd and even numbers
 export const useCalculateResult: React.FC<Button[]> = (
-	currentSelectedNumbers
+	currentSelectedNumbers: Button[]
 ) => {
 	const [result, setResult] = useState(0)
 
@@ -20,5 +20,7 @@ export const useCalculateResult: React.FC<Button[]> = (
 		setResult(total)
 	}, [currentSelectedNumbers])
 
-	return result % 2 === 0 ? result : 0
+	const judgement = result % 2 === 0 ? result : 0
+
+	return judgement
 }
