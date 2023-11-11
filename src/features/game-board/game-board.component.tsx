@@ -1,3 +1,4 @@
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { disabledBtns, enableBtns } from '../button/buttonSlice'
 
@@ -8,7 +9,6 @@ import {
 	selectedBoard,
 	selectedResult,
 } from '../button/button-selector'
-import React from 'react'
 import WinOrLoose from '../../base-components/modal/modal.component'
 
 const GameBoard = () => {
