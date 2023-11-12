@@ -25,7 +25,8 @@ const GameBoard = () => {
 	const [state, setState] = React.useState(false)
 
 	//! condition, if there are 12 selected elements, the other 68 elements are disabled
-	const maxSelectedFields = selectedBtns.length === 12
+	const maxSelectedFields =
+		selectedBtns.length === 12 || currentSpecialTokens.length === 3
 	const disabledFields = React.useCallback(() => {
 		if (maxSelectedFields) {
 			dispatch(disabledBtns())
