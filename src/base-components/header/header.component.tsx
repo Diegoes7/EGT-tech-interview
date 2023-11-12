@@ -5,19 +5,17 @@ import MainBet from '../../features/betting/main-bet.component'
 import MainDraw from '../../features/draw/main-draw.component'
 import MainSelectedNumbers from '../../features/selected-numbers/main-selected-numbers'
 
-const Header = () => {
-	return (
-		<HeaderContainer>
-			<InnerWrapper>
-				<MainBet />
-				<MainDraw />
-			</InnerWrapper>
-			<InnerWrapper>
-				<MainSelectedNumbers />
-				<Price />
-			</InnerWrapper>
-		</HeaderContainer>
-	)
-}
+const Header = () => (
+	<HeaderContainer>
+		<InnerWrapper>
+			<MainBet />
+			<MainDraw />
+		</InnerWrapper>
+		<InnerWrapper>
+			<MainSelectedNumbers />
+			<Price />
+		</InnerWrapper>
+	</HeaderContainer>
+)
 
 export default Header

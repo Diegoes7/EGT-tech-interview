@@ -13,6 +13,8 @@ export const BetFieldContainer = styled.div`
 	justify-content: center;
 	align-content: center;
 	background-color: #fff;
+	margin-bottom: 0.5rem;
+	overflow: hidden;
 
 	@media screen and (max-width: 1200px) {
 		padding: 0.5rem;
@@ -37,15 +39,14 @@ export const InputContainer = styled.div`
 	justify-content: center;
 	width: 17rem;
 	line-height: 1rem;
-	margin-bottom: 10px;
+	margin-bottom: 0.75rem;
 
 	span {
 		display: flex;
 		align-self: center;
 		padding-left: 0.5rem;
 	}
-
-	@media screen and (max-width: 1200px) {
+	@media screen and (max-width: 720px) {
 		width: 14rem;
 	}
 `
@@ -64,8 +65,8 @@ export const BetContainer = styled.div`
 	position: fixed;
 	z-index: 1;
 	background-color: white;
-	left: 1%;
-	top: 14%;
+	left: 2.5%;
+	top: 11.9%;
 	overflow: auto;
 	width: 19rem;
 	border-radius: 0.75rem;
@@ -75,18 +76,18 @@ export const BetContainer = styled.div`
 	border-radius: 0.75rem;
 
 	@media screen and (max-width: 800px) {
-		top: 13.5%;
+		top: 11.3%;
 		padding-bottom: 0.5rem;
 	}
 
 	@media screen and (max-width: 720px) {
-		top: 12.7%;
+		top: 10.8%;
 		left: 3%;
 		width: 15rem;
 	}
 
 	@media screen and (max-width: 600px) {
-		top: 10.2%;
+		top: 9.3%;
 	}
 `
 
@@ -98,5 +99,14 @@ export const BetPopupContainer = styled.div`
 		font-size: 1rem;
 		padding-bottom: 0.3rem;
 		box-shadow: none;
+	}
+`
+
+export const Currency = styled.span`
+	margin-left: 0.2rem;
+	font-size: 0.7rem;
+
+	@media screen and (max-width: 720px) {
+		font-size: 0.5rem;
 	}
 `

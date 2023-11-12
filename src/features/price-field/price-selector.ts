@@ -7,5 +7,5 @@ const priceReducer = (state: RootState) => state.price
 //! memoized the part of sliced state, update when changed
 export const selectedPrice = createSelector(
 	[priceReducer],
-	(priceSlice) => priceSlice.price
+	(priceSlice) => Math.round(priceSlice.price * 100) / 100
 )

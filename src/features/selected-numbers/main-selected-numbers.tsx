@@ -12,6 +12,7 @@ import {
 import { showSelectedNumbers } from '../button/buttonSlice'
 import { StyledPiListNumbersFillIcon } from '../../base-components/icon-components/icon-styles'
 import Button from '../../base-components/button/button.component'
+import { HeaderCurrentNumber } from '../../base-components/header/header.styles'
 
 const MainSelectedNumbers = () => {
 	const dispatch = useDispatch()
@@ -31,9 +32,7 @@ const MainSelectedNumbers = () => {
 			<Button onClick={handleToggle} type='button'>
 				<StyledPiListNumbersFillIcon />
 				Избрани числа:{' '}
-				<span style={{ marginLeft: '.2rem', fontSize: '1rem' }}>
-					{currentSelected.length}
-				</span>
+				<HeaderCurrentNumber>{currentSelected.length}</HeaderCurrentNumber>
 			</Button>
 			{isShow && (
 				<SelectedNumberContainer>

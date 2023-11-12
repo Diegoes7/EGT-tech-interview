@@ -41,7 +41,7 @@ export const ModalView = styled.div<ResizeContainerProp>`
 
 	${({ resizeContainer }) => resizeContainer && resizeContainerStyles}
 
-	@media screen and (max-width: 520px) {
+	@media screen and (max-width: 530px) {
 		padding: 1rem 0.5rem;
 		width: 80%;
 	}
@@ -66,11 +66,11 @@ export const TextContainer = styled.div`
 		hyphens: auto;
 	}
 
-	@media screen and (max-width: 540px) {
-		margin: 1rem 0.5rem;
+	@media screen and (max-width: 560px) {
+		margin-bottom: 1rem;
 	}
 
-	@media screen and (max-width: 440px) {
+	@media screen and (max-width: 460px) {
 		margin: 1rem 0.5rem;
 		h2 {
 			font-size: 0.8rem;

@@ -20,6 +20,8 @@ const Timer: React.FC<Props> = ({ isOpen }) => {
 	const currentTimer = useSelector(selectedClockTime)
 	const { isSuccess } = useGetCommentsQuery()
 
+	const hideCommentsFunc = React.useCallback(() => dispatch(hideComments()), [dispatch])
+
 	const min = String(Math.trunc(currentTimer / 60)).padStart(2, '0')
 	const sec = String(currentTimer % 60).padStart(2, '0')
 
@@ -38,9 +40,7 @@ const Timer: React.FC<Props> = ({ isOpen }) => {
 
 	return (
 		<OuterContainer>
-			<Button
-				onClick={() => dispatch(hideComments())}
-			>
+			<Button onClick={hideCommentsFunc}>
 				<StyledBiSolidHideIcon />
 				Скрий
 			</Button>

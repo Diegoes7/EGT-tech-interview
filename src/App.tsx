@@ -24,8 +24,8 @@ function App() {
 
 	const closeModal = React.useCallback(() => setModalOpen(false), [])
 
+	//! Set isModalOpen to true when the component /app/ loads
 	React.useEffect(() => {
-		// Set isModalOpen to true when the component loads
 		setModalOpen(true)
 	}, [])
 

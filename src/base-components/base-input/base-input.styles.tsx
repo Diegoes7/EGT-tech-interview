@@ -18,8 +18,6 @@ export const Input = styled.input`
 	padding: 10px 10px 10px 5px;
 	width: 85%;
 	border: none;
-	/* border-radius: 0.75rem; */
-	/* border-bottom: 1px solid ${mainInputColor}; */
 	margin: 1rem 0;
 	text-align: center;
 	border: 2px ${mainRedColor} solid;
@@ -35,7 +33,7 @@ export const Input = styled.input`
 
 	@media screen and (max-width: 1200px) {
 		font-size: 16px;
-		width: 60%;
+		width: 70%;
 	}
 
 	@media screen and (max-width: 800px) {

@@ -22,7 +22,7 @@ import {
 	StyledFaEraserIcon,
 	StyledHiPlusCircleIcon,
 } from '../../base-components/icon-components/icon-styles'
-import { CustomError } from '../../base-components/error/error.component'
+import { CustomInformationDialog } from '../../base-components/information/information.component'
 
 //i component is shown in modal => click his main
 const BetField: React.FC<Props> = ({ handleToggle }) => {
@@ -32,7 +32,7 @@ const BetField: React.FC<Props> = ({ handleToggle }) => {
 	const modalRef = useOutsideClick(isShow, () => {
 		dispatch(showBetDetails(!isShow))
 	})
-	
+
 	//$ set local state to show the default value - 1
 	const [value, setValue] = useState<string>(currentBet.toString())
 	const [error, setError] = useState<string>('')
@@ -80,6 +80,9 @@ const BetField: React.FC<Props> = ({ handleToggle }) => {
 
 	if (!isShow) return null
 
+	const notNegativeNumber: boolean = currentBet <= 0.0
+	const buttonDisabled = value.length === 0 || Number(value) === 0
+
 	//! use to fixed to show only 2 digits after the dot, in the state i keep it as a number
 	//! use array function to be brief and don't cause performance issue
 	//* also to show that I heard of them
@@ -102,8 +105,8 @@ const BetField: React.FC<Props> = ({ handleToggle }) => {
 					<ButtonIcon onClick={handleIncrement}>
 						<StyledHiPlusCircleIcon />
 					</ButtonIcon>
-					<ButtonIcon disabled={currentBet === 0} onClick={handleDecrement}>
-						<StyledBiSolidMinusCircleIcon disabledIcon={currentBet === 0} />
+					<ButtonIcon disabled={notNegativeNumber} onClick={handleDecrement}>
+						<StyledBiSolidMinusCircleIcon disabled={notNegativeNumber} />
 					</ButtonIcon>
 				</ButtonContainer>
 				<BaseInput
@@ -125,16 +128,20 @@ const BetField: React.FC<Props> = ({ handleToggle }) => {
 					justifyContent: 'space-evenly',
 				}}
 			>
-				<Button disabled={value.length === 0} onClick={handleBetByAmount}>
+				<Button disabled={buttonDisabled} onClick={handleBetByAmount}>
 					<StyledBetMoneyIcon />
 					Заложи
 				</Button>
-				<Button disabled={value.length === 0} onClick={resetBetToInitial}>
+				<Button disabled={buttonDisabled} onClick={resetBetToInitial}>
 					<StyledFaEraserIcon />
 					Изтрий
 				</Button>
 			</div>
-			{error && <CustomError closable={true}>{error}</CustomError>}
+			{error && (
+				<CustomInformationDialog closable={true}>
+					{error}
+				</CustomInformationDialog>
+			)}
 		</BetFieldContainer>
 	)
 }

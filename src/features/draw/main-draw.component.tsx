@@ -6,6 +6,7 @@ import { showDrawDetails } from './drawSlice'
 import DrawField from './draw-field.component'
 import { DrawContainer, MainDrawContainer } from './draw-field.styles'
 import { StyledAiFillRocketIcon } from '../../base-components/icon-components/icon-styles'
+import { HeaderCurrentNumber } from '../../base-components/header/header.styles'
 
 const MainDraw = () => {
 	const currentDraw = useSelector(selectedDraws)
@@ -24,7 +25,7 @@ const MainDraw = () => {
 		<MainDrawContainer>
 			<Button onClick={handleToggle}>
 				<StyledAiFillRocketIcon />
-				Теглене: <span style={{ fontSize: '1rem', marginLeft: '0.3rem' }}>{currentDraw}</span>
+				Теглене: <HeaderCurrentNumber>{currentDraw}</HeaderCurrentNumber>
 			</Button>
 			{isShow && (
 				<DrawContainer>

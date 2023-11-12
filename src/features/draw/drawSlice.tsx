@@ -16,12 +16,12 @@ export const drawSlice = createSlice({
 	initialState: drawState,
 	reducers: {
 		increment: (state) => {
-			if (!isNaN(state.draws) && state.draws > 0.2) {
+			if (!isNaN(state.draws) && state.draws >= 0) {
 				state.draws += 1
 			}
 		},
 		decrement: (state) => {
-			if (!isNaN(state.draws) && state.draws > 0.2) {
+			if (!isNaN(state.draws) && state.draws >= 0) {
 				state.draws -= 1
 			}
 		},

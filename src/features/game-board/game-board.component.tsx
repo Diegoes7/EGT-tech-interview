@@ -8,8 +8,10 @@ import {
 	selectChooseButtons,
 	selectedBoard,
 	selectedResult,
+	selectedSpecialTokens,
 } from '../button/button-selector'
 import WinOrLoose from '../../base-components/modal/modal.component'
+import { CustomInformationDialog } from '../../base-components/information/information.component'
 
 const GameBoard = () => {
 	const dispatch = useDispatch()
@@ -17,7 +19,10 @@ const GameBoard = () => {
 	const board = useSelector(selectedBoard)
 	const selectedBtns = useSelector(selectChooseButtons)
 	const currentResult = useSelector(selectedResult)
+	const currentSpecialTokens = useSelector(selectedSpecialTokens)
+
 	const [isModalOpen, setModalOpen] = React.useState(false)
+	const [state, setState] = React.useState(false)
 
 	//! condition, if there are 12 selected elements, the other 68 elements are disabled
 	const maxSelectedFields = selectedBtns.length === 12
@@ -38,12 +43,20 @@ const GameBoard = () => {
 		window.location.reload()
 	}, [])
 
+	const closeDialog = React.useCallback(() => setState(false), [])
+
 	//! set when hit a sum above to trigger automatic win/loose, for more fun
 	React.useEffect(() => {
 		if (currentResult >= 473) {
 			setModalOpen(true)
 		}
 	}, [currentResult])
+
+	React.useEffect(() => {
+		if (currentSpecialTokens.length > 0) {
+			setState(true)
+		}
+	}, [currentSpecialTokens.length])
 
 	//* pass through the array and fill every the Button component
 	//* with props/ values
@@ -71,6 +84,11 @@ const GameBoard = () => {
 			<GameBoardContainer>
 				{startingBoard ? startingBoard : 'No Board'}
 			</GameBoardContainer>
+			{state && (
+				<CustomInformationDialog type='info' onClose={closeDialog} closable>
+					Намери драконов белег.
+				</CustomInformationDialog>
+			)}
 		</>
 	)
 }

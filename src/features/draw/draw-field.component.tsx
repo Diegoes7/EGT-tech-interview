@@ -25,7 +25,7 @@ import {
 	StyledBsBookmarkCheckFillIcon,
 	StyledHiPlusCircleIcon,
 } from '../../base-components/icon-components/icon-styles'
-import { CustomError } from '../../base-components/error/error.component'
+import { CustomInformationDialog } from '../../base-components/information/information.component'
 
 const DrawField: React.FC<Props> = ({ handleToggle }) => {
 	// get slice of the state and use in UI component
@@ -73,6 +73,8 @@ const DrawField: React.FC<Props> = ({ handleToggle }) => {
 
 	if (!isShow) return null
 
+	const notNegativeNumber: boolean = currentDraw === 0
+
 	// input is type text because of the arrays is annoying
 	return (
 		<DrawFieldContainer ref={modalRef}>
@@ -93,8 +95,8 @@ const DrawField: React.FC<Props> = ({ handleToggle }) => {
 					<ButtonIcon onClick={handleIncrement}>
 						<StyledHiPlusCircleIcon />
 					</ButtonIcon>
-					<ButtonIcon onClick={handleDecrement}>
-						<StyledBiSolidMinusCircleIcon />
+					<ButtonIcon disabled={notNegativeNumber} onClick={handleDecrement}>
+						<StyledBiSolidMinusCircleIcon disabledIcon={notNegativeNumber} />
 					</ButtonIcon>
 				</ButtonContainer>
 				<BaseInput
@@ -120,7 +122,7 @@ const DrawField: React.FC<Props> = ({ handleToggle }) => {
 					Избери
 				</Button>
 			</div>
-			{error && <CustomError closable={true}>{error}</CustomError>}
+			{error && <CustomInformationDialog closable={true}>{error}</CustomInformationDialog>}
 		</DrawFieldContainer>
 	)
 }

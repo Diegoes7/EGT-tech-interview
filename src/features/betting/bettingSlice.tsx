@@ -16,12 +16,12 @@ export const betSlice = createSlice({
 	initialState: betState,
 	reducers: {
 		increment: (state) => {
-			if (!isNaN(state.bet) && state.bet > 0.2) {
+			if (!isNaN(state.bet) && state.bet >= 0) {
 				state.bet += 0.2
 			}
 		},
 		decrement: (state) => {
-			if (!isNaN(state.bet) && state.bet > 0.2) {
+			if (!isNaN(state.bet) && state.bet >= 0) {
 				state.bet -= 0.2
 			}
 		},

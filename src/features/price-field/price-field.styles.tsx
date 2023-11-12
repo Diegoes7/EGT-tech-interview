@@ -10,20 +10,24 @@ export const PriceContainer = styled.div`
 	padding: 0.6rem;
 	border-radius: 15px;
 	color: aliceblue;
-	margin-left: 5rem;
+	margin-left: 4rem;
 	font-size: 1rem;
 	font-weight: bold;
 	${customBoxShadow}
 
-	@media screen and (max-width: 720px) {
+	@media screen and (max-width: 790px) {
 		margin-left: 0.2rem;
 		padding: 0.3rem;
 		box-shadow: none;
 		font-size: 0.9rem;
 	}
+
+	@media screen and (max-width: 650px) {
+		font-size: 0.7rem;
+	}
 `
 
 export const PriceValue = styled.span`
 	font-weight: 600;
-	padding-left: 5px;
+	padding-left: 0.2rem;
 `

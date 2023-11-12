@@ -40,7 +40,7 @@ export const DrawContainer = styled.div`
 	position: fixed;
 	z-index: 1;
 	background-color: white;
-	top: 14%;
+	top: 11.9%;
 	overflow: auto;
 	width: 18rem;
 	border-radius: 0.75rem;
@@ -51,18 +51,22 @@ export const DrawContainer = styled.div`
 	border-radius: 0.75rem;
 
 	@media screen and (max-width: 800px) {
-		top: 13.5%;
+		top: 11.3%;
 		padding-bottom: 0.5rem;
 	}
 
 	@media screen and (max-width: 720px) {
-		top: 12.7%;
-		left: 11%;
+		top: 10.9%;
+		left: 27%;
 		width: 15rem;
 	}
 
 	@media screen and (max-width: 600px) {
-		top: 16%;
+		top: 15.6%;
+		left: 23%;
+	}
+	@media screen and (max-width: 600px) {
+		left: 18%;
 	}
 `
 

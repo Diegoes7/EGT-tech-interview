@@ -129,7 +129,7 @@ export const StyledHiPlusCircleIcon = styled(HiPlusCircleIcon)`
 `
 
 const disabledIconStyles = css`
-	background-color: #1e1b23;
+	color: #b0b0cb;
 `
 
 export type DisabledIconProp = {
@@ -149,7 +149,7 @@ export const StyledBiSolidMinusCircleIcon = styled(
 		translate: all 1s ease-in-out;
 	}
 
-	${({ disabledIcon }) => disabledIcon && disabledIconStyles}
+	${({ disabledIcon }) => (disabledIcon === true ? disabledIconStyles : '')}
 `
 
 export const StyledBsBookmarkCheckFillIcon = styled(BsBookmarkCheckFillIcon)`

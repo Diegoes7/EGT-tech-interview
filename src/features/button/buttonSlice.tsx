@@ -70,9 +70,8 @@ export const buttonSlice = createSlice({
 			state.result = 0
 		},
 		addSpecialToken(state, { payload }) {
-			state.specialTokens = payload
-			if (state.specialTokens.length > 3) {
-				return
+			if (state.specialTokens.length < 3) {
+				state.specialTokens = payload
 			}
 		},
 	},

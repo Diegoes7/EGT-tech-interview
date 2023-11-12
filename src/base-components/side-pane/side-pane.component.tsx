@@ -40,7 +40,7 @@ const SidePane = () => {
 		}
 	}, [currentSelectedNumbers, dispatch, predefinedSpecialTokens])
 
-	//! when find three special numbers, it's shown a button to get the reward, 
+	//! when find three special numbers, it's shown a button to get the reward,
 	//! after click you win and start new game
 	const closePane = React.useCallback(() => {
 		dispatch(setPrice(717171))
@@ -69,7 +69,7 @@ const SidePane = () => {
 			))}
 			{currentCountSpecialTokens.length === 3 && (
 				<RewardDragonContainer>
-					Ти спечели голямата награда: <RewardSpan>717171 лева.</RewardSpan>
+					Ти спечели голямата награда: <RewardSpan>71717 лева.</RewardSpan>
 					<Button
 						style={{ width: '50%' }}
 						disabled={tokenCount.length === 3 ? false : true}
@@ -93,3 +93,5 @@ const DragonToken = () => {
 		</DragonContainer>
 	)
 }
+
+

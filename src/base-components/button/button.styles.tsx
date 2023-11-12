@@ -10,6 +10,13 @@ const mainHover = css`
 	transform: all 1s ease-in-out;
 `
 
+const customDisabled = css`
+	color: #b0b0cb;
+	background-color: #120202;
+	border: 0.15rem solid #120202;
+	cursor: not-allowed;
+`
+
 export const BaseButton = styled.button`
 	min-width: 3rem;
 	${customBorderRadius}
@@ -34,9 +41,7 @@ export const BaseButton = styled.button`
 	}
 
 	&:disabled {
-		color: #b0b0cb;
-		background-color: #120202;
-		border: 0.15rem solid #120202;
+		${customDisabled}
 	}
 
 	@media screen and (max-width: 1200px) {
@@ -53,7 +58,6 @@ export const BaseButton = styled.button`
 		font-size: 0.6rem;
 		padding: 0.3rem;
 	}
-
 `
 export const ModifyButton = styled(BaseButton)`
 	min-width: 1.7rem;
@@ -73,23 +77,18 @@ export const ModifyButton = styled(BaseButton)`
 	}
 `
 
-export const ModalButton = styled(BaseButton)`
-	min-width: 2rem;
-	padding: 0.5rem;
-	height: 2rem;
-	letter-spacing: 0.5px;
-	line-height: 1rem;
-`
-
 export const ButtonSpinner = styled(SpinnerContainer)`
 	width: 30px;
 	height: 30px;
 `
 export const ButtonIcon = styled.button`
 	background-color: white;
+	cursor: pointer;
 
 	&:disabled {
-		background-color: black;
+		${customDisabled}
+		border-radius: 2rem;
+		height: 2.1rem;
 	}
 
 	@media screen and (max-width: 1200px) {

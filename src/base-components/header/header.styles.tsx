@@ -27,9 +27,19 @@ export const HeaderContainer = styled.header`
 export const InnerWrapper = styled.div`
 	display: flex;
 	gap: 0.2rem;
+	
 	@media screen and (max-width: 600px) {
 		flex-direction: column;
 		margin: 0.2rem;
 		padding: 0.2rem;
+	}
+`
+
+export const HeaderCurrentNumber = styled.span`
+	margin-left: 0.2rem;
+	font-size: 1rem;
+
+	@media screen and (max-width: 720px) {
+		font-size: 0.8rem;
 	}
 `
