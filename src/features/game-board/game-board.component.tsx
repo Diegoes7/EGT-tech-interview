@@ -48,10 +48,10 @@ const GameBoard = () => {
 
 	//! set when hit a sum above to trigger automatic win/loose, for more fun
 	React.useEffect(() => {
-		if (currentResult >= 473) {
+		if (currentResult >= 473 && currentSpecialTokens.length < 3) {
 			setModalOpen(true)
 		}
-	}, [currentResult])
+	}, [currentResult, currentSpecialTokens.length])
 
 	React.useEffect(() => {
 		if (currentSpecialTokens.length > 0) {
