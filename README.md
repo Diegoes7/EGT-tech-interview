@@ -1,4 +1,4 @@
-# App is deployed in netlify, link - https://bespoke-llama-d8e4ab.netlify.app/
+App is deployed in netlify, link - https://bespoke-llama-d8e4ab.netlify.app/
 
 # Getting Started with Create React App and Redux
 
