@@ -16,11 +16,6 @@ export const DrawTitle = styled.span`
 	padding: 0.3rem 1rem;
 	color: white;
 	${customBorderRadius}
-
-	@media screen and (max-width: 720px) {
-		font-size: .9rem ;
-	}
-
 `
 
 export const DrawButtonsModifier = styled.button`
@@ -37,10 +32,11 @@ export const DrawButtonsModifier = styled.button`
 
 export const DrawContainer = styled.div`
 	display: block;
-	position: fixed;
+	position: absolute;
+	top: 0%;
+	/* left: -45%; */
 	z-index: 1;
 	background-color: white;
-	top: 11.9%;
 	overflow: auto;
 	width: 18rem;
 	border-radius: 0.75rem;
@@ -51,22 +47,12 @@ export const DrawContainer = styled.div`
 	border-radius: 0.75rem;
 
 	@media screen and (max-width: 800px) {
-		top: 11.3%;
 		padding-bottom: 0.5rem;
 	}
 
 	@media screen and (max-width: 720px) {
-		top: 10.9%;
-		left: 27%;
 		width: 15rem;
-	}
-
-	@media screen and (max-width: 600px) {
-		top: 15.6%;
-		left: 23%;
-	}
-	@media screen and (max-width: 600px) {
-		left: 18%;
+		font-size: 1rem;
 	}
 `
 
@@ -78,6 +64,7 @@ export const ButtonContainer = styled.div`
 `
 
 export const MainDrawContainer = styled.div`
+	position: relative;
 	border-radius: 0.75rem;
 	${customBoxShadow}
 

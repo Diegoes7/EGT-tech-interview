@@ -27,7 +27,7 @@ export const HeaderContainer = styled.header`
 export const InnerWrapper = styled.div`
 	display: flex;
 	gap: 0.2rem;
-	
+
 	@media screen and (max-width: 600px) {
 		flex-direction: column;
 		margin: 0.2rem;

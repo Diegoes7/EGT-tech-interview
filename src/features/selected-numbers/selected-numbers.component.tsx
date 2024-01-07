@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { showSelectedNumbers } from '../button/buttonSlice'
 import {
 	CurrentResultContainer,
+	NoNumbersMessage,
 	SelectedButtons,
 	SelectedNumbersContainer,
 	SelectedNumbersRow,
@@ -64,7 +65,7 @@ const SelectedNumbers: React.FC<Props> = ({ handleToggle }) => {
 				Избрани числа:
 			</TitleSelectedNumbersContainer>
 			<SelectedNumbersContainer>
-				{currentSelectedNumbers
+				{currentSelectedNumbers.length === 0 ? <NoNumbersMessage>Няма избрани чилса</NoNumbersMessage> : currentSelectedNumbers
 					.map((sln) => (
 						<SelectedNumbersRow key={sln.id}>{sln.value}</SelectedNumbersRow>
 					))

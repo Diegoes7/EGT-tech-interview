@@ -67,11 +67,11 @@ export const MainSelectedButtonContainer = styled.button`
 
 export const SelectedNumberContainer = styled.div`
 	display: block;
-	position: fixed;
+	position: absolute;
+	top: 0%;
+	/* left: -45%; */
 	z-index: 1;
 	background-color: white;
-	left: 33%;
-	top: 14%;
 	overflow: auto;
 	width: 18rem;
 	border-radius: 0.75rem;
@@ -81,21 +81,19 @@ export const SelectedNumberContainer = styled.div`
 	border-radius: 0.75rem;
 
 	@media screen and (max-width: 800px) {
-		top: 13.5%;
 		padding-bottom: 0.5rem;
 	}
 
 	@media screen and (max-width: 720px) {
-		top: 12.7%;
 		width: 15rem;
 	}
-
-	@media screen and (max-width: 600px) {
-		top: 10%;
+	@media screen and (max-width: 520px) {
+		left: -40%;
 	}
 `
 
 export const MainSelectedNumbersContainer = styled.div`
+	position: relative;
 	border-radius: 0.75rem;
 	${customBoxShadow}
 
@@ -126,4 +124,10 @@ export const TitleSelectedNumbersContainer = styled.div`
 	color: white;
 	font-size: 0.9rem;
 	${customBorderRadius}
+`
+
+export const NoNumbersMessage = styled.h2`
+	margin: 0.5rem;
+	padding: 0.5rem;
+	font-size: 0.9rem;
 `

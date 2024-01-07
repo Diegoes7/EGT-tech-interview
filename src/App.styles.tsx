@@ -11,7 +11,7 @@ export const customBorderRadius = css`
 
 export const AppContainer = styled.div`
 	display: flex;
-	margin: 0.2rem .6rem;
+	margin: 0.2rem 0.6rem;
 	gap: 3%;
 	align-items: flex-start;
 	justify-content: center;
@@ -26,13 +26,13 @@ export const TitleContainer = styled.h2`
 	display: flex;
 	flex: 1 1 auto;
 	font-size: 1.1rem;
-	/* line-height: 0.5rem; */
 	justify-content: center;
 	padding: 0 3.2rem 0 2.5rem;
+	margin: 0.3rem;
 	align-items: center;
 	background-color: ${secondRedColor};
 	color: white;
-	height: 1.7rem;
+	height: 2.5%;
 	${customBorderRadius}
 	${customBoxShadow}
 
@@ -44,8 +44,8 @@ export const TitleContainer = styled.h2`
 `
 
 export const InnerContainer = styled.div`
-	display: flex ;
-	gap: 1rem;	
+	display: flex;
+	gap: 1rem;
 `
 
 export const GameContainer = styled.div`
@@ -55,6 +55,7 @@ export const GameContainer = styled.div`
 `
 
 export const WrapperTimeComment = styled.div`
+	margin-top: 3rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -68,4 +69,3 @@ export const WrapperTimeComment = styled.div`
 		align-items: center;
 	}
 `
-

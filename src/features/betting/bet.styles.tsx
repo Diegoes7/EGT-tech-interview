@@ -59,14 +59,14 @@ export const MainBetContainer = styled.div`
 	padding: 0 1rem;
 	border-radius: 0.75rem;
 `
-
+// element which will be positioned relative to ancestor
 export const BetContainer = styled.div`
 	display: block;
-	position: fixed;
+	position: absolute;
+	top: 0%;
+	/* left: -45%; */
 	z-index: 1;
 	background-color: white;
-	left: 2.5%;
-	top: 11.9%;
 	overflow: auto;
 	width: 19rem;
 	border-radius: 0.75rem;
@@ -76,22 +76,17 @@ export const BetContainer = styled.div`
 	border-radius: 0.75rem;
 
 	@media screen and (max-width: 800px) {
-		top: 11.3%;
 		padding-bottom: 0.5rem;
 	}
 
 	@media screen and (max-width: 720px) {
-		top: 10.8%;
-		left: 3%;
 		width: 15rem;
-	}
-
-	@media screen and (max-width: 600px) {
-		top: 9.3%;
 	}
 `
 
+//positioning context for its child elements
 export const BetPopupContainer = styled.div`
+	position: relative;
 	border-radius: 0.8rem;
 	${customBoxShadow}
 

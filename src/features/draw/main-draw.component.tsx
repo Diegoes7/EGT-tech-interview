@@ -23,7 +23,7 @@ const MainDraw = () => {
 
 	return (
 		<MainDrawContainer>
-			<Button onClick={handleToggle}>
+			<Button style={{ width: '100%' }} onClick={handleToggle}>
 				<StyledAiFillRocketIcon />
 				Теглене: <HeaderCurrentNumber>{currentDraw}</HeaderCurrentNumber>
 			</Button>
