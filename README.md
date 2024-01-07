@@ -1,3 +1,7 @@
+App is deployed in netlify, link - https://bespoke-llama-d8e4ab.netlify.app/
+
+It's a game with several features, fun to play and hide some surprises. Beware of the magic of number 7 :)
+
 # Getting Started with Create React App and Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
